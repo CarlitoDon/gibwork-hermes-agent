@@ -74,9 +74,11 @@ program
       const { client, signer } = getGibworkClient();
       console.log(`\nSubmitting work for task [${taskId}] as ${signer.publicKey.toBase58()}...`);
       
+      const { randomUUID } = require("crypto");
+      const fullContent = options.url ? `${options.content}\nProof URL: ${options.url}` : options.content;
       const payload = {
-        content: options.content,
-        url: options.url
+        content: fullContent,
+        idempotencyKey: randomUUID()
       };
 
       const result = await client.submissions.create(taskId, payload);
