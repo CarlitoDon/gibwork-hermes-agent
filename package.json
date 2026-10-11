@@ -1,0 +1,34 @@
+{
+  "name": "gibwork-hermes-agent",
+  "version": "1.0.0",
+  "description": "Autonomous AI Agent & Developer CLI integration for Gibwork Bounty Marketplace using Gibwork SDK & MCP",
+  "main": "src/client.js",
+  "bin": {
+    "gibwork-agent": "./src/cli.js",
+    "gibwork-agent-mcp": "./src/mcp-server.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "mcp": "node src/mcp-server.js",
+    "test": "node src/cli.js status"
+  },
+  "keywords": [
+    "gibwork",
+    "solana",
+    "bounties",
+    "mcp",
+    "hermes-agent",
+    "ai-agents",
+    "web3"
+  ],
+  "author": "Don Carlo (Rascoff)",
+  "license": "MIT",
+  "dependencies": {
+    "@gibwork/sdk": "^0.2.0",
+    "@solana/web3.js": "^1.99.0",
+    "bs58": "^6.0.0",
+    "commander": "^15.0.0",
+    "dotenv": "^18.0.7",
+    "tweetnacl": "^1.0.3"
+  }
+}
